@@ -1,10 +1,9 @@
 package implement
 
 import (
+	"blockchain/http"
 	"encoding/json"
 	"errors"
-	"game_server/leaf/log"
-	"game_server/pkg/http"
 )
 
 type Solana struct {
@@ -34,7 +33,6 @@ func (this *Solana) CurrentBlockHeight() (int, error) {
 	}
 
 	response, err := this.client.R().SetBody(requestBody).Post("")
-	log.Debug("Solana获取区块最新高度返回结果：%v", response.String())
 	defer response.RawResponse.Body.Close()
 	if err != nil {
 		log.Error("Arbis get slot error:", err.Error())
@@ -71,7 +69,6 @@ func (this *Solana) BlockInfo(blockHeightNumber int) (string, error) {
 	}
 
 	response, err := this.client.R().SetBody(requestBody).Post("")
-	log.Debug("Solana获取区块高度: %v, 返回结果：%v", blockHeightNumber, response.String())
 	defer response.RawResponse.Body.Close()
 	if err != nil {
 		log.Error("Arbis get slot error:", err.Error())

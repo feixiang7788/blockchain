@@ -1,9 +1,9 @@
 package blockchain
 
 import (
-	"game_server/pkg/blockchain/implement"
-	"game_server/pkg/http"
-	"game_server/pkg/identity/CurrencyType"
+	"blockchain/http"
+	"blockchain/identity/CurrencyType"
+	"blockchain/implement"
 )
 
 type BlockchainInfo interface {

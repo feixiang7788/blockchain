@@ -1,10 +1,9 @@
 package implement
 
 import (
+	"blockchain/http"
 	"encoding/json"
 	"errors"
-	"game_server/leaf/log"
-	"game_server/pkg/http"
 	"strconv"
 	"strings"
 )
@@ -33,7 +32,6 @@ func (this *Arbis) CurrentBlockHeight() (int, error) {
 	}
 
 	response, err := this.client.R().SetQueryParams(params).Get("/api")
-	log.Debug("Arbis获取区块最新高度返回结果：%v", response.String())
 	defer response.RawResponse.Body.Close()
 	if err != nil {
 		return 0, err
@@ -68,7 +66,6 @@ func (this *Arbis) BlockInfo(blockHeightNumber int) (string, error) {
 	}
 
 	response, err := this.client.R().SetQueryParams(params).Get("https://api.arbiscan.io/api")
-	log.Debug("Arbis获取区块高度：%v, 返回结果：%v", blockHeightNumber, response.String())
 	defer response.RawResponse.Body.Close()
 	if err != nil {
 		return "", err
