@@ -1,9 +1,9 @@
 package implement
 
 import (
-	"blockchain/http"
 	"encoding/json"
 	"errors"
+	"github.com/feixiang7788/blockchain/http"
 )
 
 type Solana struct {
@@ -35,7 +35,6 @@ func (this *Solana) CurrentBlockHeight() (int, error) {
 	response, err := this.client.R().SetBody(requestBody).Post("")
 	defer response.RawResponse.Body.Close()
 	if err != nil {
-		log.Error("Arbis get slot error:", err.Error())
 		return 0, err
 	}
 
@@ -71,7 +70,6 @@ func (this *Solana) BlockInfo(blockHeightNumber int) (string, error) {
 	response, err := this.client.R().SetBody(requestBody).Post("")
 	defer response.RawResponse.Body.Close()
 	if err != nil {
-		log.Error("Arbis get slot error:", err.Error())
 		return "", err
 	}
 

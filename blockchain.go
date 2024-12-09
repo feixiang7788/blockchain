@@ -1,9 +1,9 @@
 package blockchain
 
 import (
-	"blockchain/http"
-	"blockchain/identity/CurrencyType"
-	"blockchain/implement"
+	"github.com/feixiang7788/blockchain/http"
+	"github.com/feixiang7788/blockchain/identity/CurrencyType"
+	"github.com/feixiang7788/blockchain/implement"
 )
 
 type BlockchainInfo interface {
