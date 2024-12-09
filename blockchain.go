@@ -1,4 +1,4 @@
-package blockchain
+package blockchainInfo
 
 import (
 	"github.com/feixiang7788/blockchain/http"
