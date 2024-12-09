@@ -1,4 +1,4 @@
-module blockchain
+module github.com/feixiang7788/blockchain
 
 go 1.23.3
 
